@@ -40,7 +40,7 @@ class ProductCard extends Component {
                 <CardViewWithImage
                   width={160}
                   source={{ uri: this.props.product.img }}
-                  content={`${this.props.product.price}KWD/item`}
+                  content={`${this.props.product.price} KWD/item`}
                   title={this.props.product.name}
                   titleFontSize={16}
                   titleFontFamily={"Avenir"}
