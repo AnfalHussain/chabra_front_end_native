@@ -28,7 +28,6 @@ class ProductsList extends Component {
     }
   };
 
-
   render() {
     const products = this.props.products;
     let market;
@@ -37,7 +36,7 @@ class ProductsList extends Component {
     }
     if (products) {
       market = this.props.filteredProducts.map((product, idx) => {
-        return <ProductCard product={product} key={idx} />
+        return <ProductCard product={product} key={idx} />;
       });
     }
     return (
@@ -45,13 +44,18 @@ class ProductsList extends Component {
         source={wallpaper}
         style={{ width: "100%", height: "100%" }}
       >
-
-
         <SearchBar />
         <Content style={{ marginTop: 10 }}>
-          <Grid>
-            <Col>{market}</Col>
-          </Grid>
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              alignContent: "flex-start",
+              alignItems: "center"
+            }}
+          >
+            {market}
+          </View>
         </Content>
       </ImageBackground>
     );
@@ -68,11 +72,7 @@ const mapDispatchToProps = dispatch => {
   return {
     filterProducts: query => dispatch(actionCreators.filterProducts(query)),
     logout: () => dispatch(actionCreators.logout())
-
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProductsList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);

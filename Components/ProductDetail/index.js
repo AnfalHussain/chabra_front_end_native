@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import wallpaper from "../../assets/wall.png";
 
-import {ImageBackground, View} from "react-native"
+import { ImageBackground, View } from "react-native";
 // NativeBase Components
 import {
   Thumbnail,
@@ -13,9 +13,8 @@ import {
   Item,
   Input,
   Card,
-  CardItem, 
+  CardItem,
   Icon
-
 } from "native-base";
 //Components
 import BasketBtn from "../BasketBtn";
@@ -28,9 +27,8 @@ import {
 
 //Styles
 import styles from "./styles";
-import GradientButton from 'react-native-gradient-buttons';
+import GradientButton from "react-native-gradient-buttons";
 import { red } from "ansi-colors";
-
 
 class ProductDetail extends Component {
   state = {
@@ -38,15 +36,12 @@ class ProductDetail extends Component {
   };
 
   static navigationOptions = ({ navigation }) => {
-
     return {
       title: navigation.getParam("productName"),
       headerRight: <BasketBtn />,
       headerStyle: {
         backgroundColor: "#3dffcb",
-        fontWeight: 'bold',
-  
-  
+        fontWeight: "bold"
       }
     };
   };
@@ -62,7 +57,7 @@ class ProductDetail extends Component {
     if (this.props.product.stock < 10 && this.props.product.stock > 0) {
       return (
         <>
-          <Text style={{color:"red", marginLeft: 60,}}>
+          <Text style={{ color: "red", marginLeft: 60 }}>
             {this.props.product.stock} items left!
           </Text>
         </>
@@ -73,24 +68,22 @@ class ProductDetail extends Component {
   changeQuantity = number => {
     if (this.state.quantity >= 0) {
       if (
-        this.props.items.find(
-          product => product.id === this.props.product.id
-        )
+        this.props.items.find(product => product.id === this.props.product.id)
       ) {
         let quantityInCart = this.props.items.find(
           product => product.id === this.props.product.id
         ).quantity;
-          if (
-            quantityInCart + number + this.state.quantity >
-            this.props.product.stock
-          ) {
-            return alert("Exceeded stock!");
-          } else {
-            const newQuantity = this.state.quantity + number;
-            this.setState({ quantity: newQuantity });
-          }
-        } else if (number + this.state.quantity > this.props.product.stock) {
+        if (
+          quantityInCart + number + this.state.quantity >
+          this.props.product.stock
+        ) {
           return alert("Exceeded stock!");
+        } else {
+          const newQuantity = this.state.quantity + number;
+          this.setState({ quantity: newQuantity });
+        }
+      } else if (number + this.state.quantity > this.props.product.stock) {
+        return alert("Exceeded stock!");
       }
       const newQuantity = this.state.quantity + number;
       this.setState({ quantity: newQuantity });
@@ -115,51 +108,46 @@ class ProductDetail extends Component {
       if (product.stock > 0) {
         return (
           <>
-           <CardItem style={styles.myCard }>
-                <Button rounded
-                  onPress={() =>
-                    this.state.quantity > 0 && this.changeQuantity(-1)
-                  }
-                >
-                  <Text>-</Text>
-                </Button>
+            <CardItem style={styles.myCard}>
+              <Button
+                rounded
+                onPress={() =>
+                  this.state.quantity > 0 && this.changeQuantity(-1)
+                }
+              >
+                <Text>-</Text>
+              </Button>
 
-                <Item rounded style={styles.inputField}>
-                  <Input style={styles.order}>{this.state.quantity}</Input>
-                  {/* <Input
+              <Item rounded style={styles.inputField}>
+                <Input style={styles.order}>{this.state.quantity}</Input>
+                {/* <Input
                     type="text" value={this.state.quantity} /> */}
-                </Item>
-                <Button rounded onPress={() => this.changeQuantity(1)}>
-                  <Text>+</Text>
-                </Button>
-
-
-              </CardItem>
-              <View style={{ marginLeft: 130,}}>
-
-              <Text style={{color:red, marginLeft: 20,}}>
-              {this.limited()}
-
+              </Item>
+              <Button rounded onPress={() => this.changeQuantity(1)}>
+                <Text>+</Text>
+              </Button>
+            </CardItem>
+            <View style={{ marginLeft: 130 }}>
+              <Text style={{ color: red, marginLeft: 20 }}>
+                {this.limited()}
               </Text>
-              </View>
+            </View>
 
-              <GradientButton  blueMarine style={styles.mybutn} onPressAction={this.handleAddItem}>
-              <Text style={styles.basketBtn}>
-               Add to Basket
-  
-            </Text>
+            <GradientButton
+              blueMarine
+              style={styles.mybutn}
+              onPressAction={this.handleAddItem}
+            >
+              <Text style={styles.basketBtn}>Add to Basket</Text>
             </GradientButton>
-            </>
-
+          </>
         );
       } else {
-        return(
-        
-        <Button disabled style={styles.mybutn}>
-        <Text style={styles.basketBtnOutofStock}>Out of Stock</Text>
-      </Button>
-    
-        )
+        return (
+          <Button disabled style={styles.mybutn}>
+            <Text style={styles.basketBtnOutofStock}>Out of Stock</Text>
+          </Button>
+        );
       }
     };
 
@@ -168,54 +156,44 @@ class ProductDetail extends Component {
       return <Spinner />;
     } else {
       return (
-      
-           <ImageBackground
-        source={wallpaper}
-        style={{ width: "100%", height: "100%" }}
-      >
-        <Content  style={styles.container} >
-          <View style={styles.imgView}>
-            <Thumbnail 
-              style={styles.image}
-              bordered
-              source={{ uri: product.img }}
-            />
-          </View>
+        <ImageBackground
+          source={wallpaper}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Content style={styles.container}>
+            <View style={styles.imgView}>
+              <Thumbnail
+                style={styles.image}
+                bordered
+                source={{ uri: product.img }}
+              />
+            </View>
 
-          
-          <View  style={styles.center} >
+            <View style={styles.center}>
+              <Text style={{ fontFamily: "Futura", fontSize: 20 }}>
+                Description:
+              </Text>
+            </View>
 
-          <Text         style={{ fontFamily: "Futura", fontSize: 20,}}
- >Description:</Text> 
- </View>
-
-          <CardItem style={styles.myCard2} >
-
-            <Text style={styles.description}>{product.description}</Text>
-            <Text style={styles.description}>From: {product.origin}</Text>
-            <Text style={styles.description}>Type: {product.type}</Text>
+            <CardItem style={styles.myCard2}>
+              <Text style={styles.description}>{product.description}</Text>
             </CardItem>
 
-            <View  style={styles.center} >
-            <Text         style={{ fontFamily: "Futura", fontSize: 20,}}
- >Price:</Text> 
- </View>
+            <CardItem style={styles.myCard2}>
+              <Text style={styles.country}>Origin:</Text>
+              <Text style={styles.countryName}> {product.country}</Text>
+            </CardItem>
 
-            <View  style={styles.center} >
-            <Text style={styles.price}> {product.price} KWD</Text>
-            </View>
+            <CardItem style={styles.myCard2}>
+              <Text style={styles.country}>Price:</Text>
+              <Text style={styles.price}> {product.price} KWD</Text>
+            </CardItem>
 
             <View>
-
-
-             
-            <View>{checkQuantity()}</View>
+              <View>{checkQuantity()}</View>
             </View>
-
-
-        </Content>
+          </Content>
         </ImageBackground>
-
       );
     }
   }
@@ -237,7 +215,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProductDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

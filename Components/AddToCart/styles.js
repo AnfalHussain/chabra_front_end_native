@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-
   itemList: {
     backgroundColor: "rgba(255, 255, 255, 0.52)",
     width: 180,
@@ -10,8 +9,8 @@ const styles = StyleSheet.create({
     marginRight: 5,
     marginBottom: 5,
     borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   container: {
     backgroundColor: "transparent",
@@ -19,22 +18,20 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
 
   center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-
+    justifyContent: "center",
+    alignItems: "center"
   },
   text: {
     color: "white",
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     opacity: 1,
     marginLeft: 10
   },
@@ -42,12 +39,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "black",
     margin: 20
-
   },
   icon2: {
-    color: 'white',
+    color: "white",
     height: 70,
-    width: 70,
+    width: 70
   },
 
   mybutn: {
@@ -58,17 +54,15 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     marginTop: 20,
-    marginBottom: 20,
-
-
+    marginBottom: 20
   },
   text1: {
     color: "white",
     fontSize: 18,
     fontFamily: "Futura",
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 170
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 50
   },
   divider: {
     borderBottomColor: "black",
@@ -84,8 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     height: "100%",
     width: "100%",
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardView: {
     marginTop: 10,
@@ -93,12 +86,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     // marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardDesign: {
     borderRadius: 25
-
   },
 
   listitem: {
@@ -108,8 +99,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     height: 180,
-    flexDirection: "row",
-
+    flexDirection: "row"
   },
   transparent: {
     backgroundColor: "transparent",
@@ -119,9 +109,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     flexDirection: "row",
     borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-
+    justifyContent: "center",
+    alignItems: "center"
   },
   thumbnail: {
     backgroundColor: "transparent",
@@ -129,18 +118,13 @@ const styles = StyleSheet.create({
     height: 140,
     width: 140,
     borderRadius: 30,
-    marginLeft: 200,
-
-
-
+    marginLeft: 200
   },
   background: {
     width: null,
     flex: 1,
     borderRadius: 40,
-    backgroundColor: "transparent",
-
-
+    backgroundColor: "transparent"
   }
 });
 export default styles;

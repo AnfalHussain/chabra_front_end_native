@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   inputField: {
-    width: 80,
+    width: 80
   },
 
   imgView: {
@@ -18,25 +18,22 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: "black",
     opacity: 0.6,
-    borderRadius: 30,
+    borderRadius: 30
   },
 
   image: {
     height: 200,
     width: 200,
-    marginTop: 20,
-
+    marginTop: 20
   },
   center: {
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
 
   name: {
     fontSize: 20,
-    fontWeight: "bold",
-
-
+    fontWeight: "bold"
   },
   myDetailCard: {
     margin: 20,
@@ -48,39 +45,42 @@ const styles = StyleSheet.create({
   basketBtn: {
     fontSize: 20,
     color: "white",
-    margin: 10,
-
-
+    margin: 10
   },
 
   basketBtnOutofStock: {
     fontSize: 20,
-    marginLeft: 30,
-
-
+    marginLeft: 30
   },
   description: {
     fontSize: 20,
     margin: 20
+  },
 
+  country: {
+    fontSize: 20,
+    marginLeft: 20,
+    fontWeight: "bold"
+  },
+
+  countryName: {
+    fontSize: 20,
+    marginLeft: 10
   },
   icon2: {
-    color: 'white',
+    color: "white",
     height: 40,
-    width: 40,
-
+    width: 40
   },
   price: {
     fontSize: 20,
-
     textDecorationLine: "none",
     //textAlign: "right",
-    margin: 20,
+    margin: 20
   },
   order: {
     textAlign: "center",
-    alignSelf: "center",
-
+    alignSelf: "center"
   },
 
   mybutn: {
@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     width: 200,
     marginTop: 15
-
   },
   myCard: {
     backgroundColor: "rgba(255, 255, 255, 0.6)",
@@ -97,8 +96,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
     marginBottom: 20,
-    width: 200,
-
+    width: 200
   },
   container: {
     backgroundColor: "rgba(255, 255, 255, 0.52)",
@@ -108,8 +106,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 15,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   myCard2: {
     backgroundColor: "transparent",
@@ -117,18 +114,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignSelf: "center",
     marginBottom: 20,
-    width: 370,
-
+    width: 370
   },
 
   hairLine: {
-    backgroundColor: 'rgba(5, 9, 30, 0.46)',
+    backgroundColor: "rgba(5, 9, 30, 0.46)",
     height: 2,
     marginBottom: 30,
 
     marginLeft: 30,
     width: 340
-  },
+  }
 });
 
 export default styles;

@@ -1,19 +1,18 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-
   itemList: {
     backgroundColor: "rgba(255, 255, 255, 0.6)",
-    width: 400,
-    height: 500,
+    width: 160,
+    height: 220,
     opacity: 1,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 25,
+    marginRight: 10,
     marginBottom: 20,
     marginTop: 20,
     borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   container: {
     backgroundColor: "transparent",
@@ -21,22 +20,20 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
 
   center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-
+    justifyContent: "center",
+    alignItems: "center"
   },
   text: {
     color: "white",
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     opacity: 1,
     marginLeft: 10
   },
@@ -44,25 +41,23 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "black",
     margin: 20
-
   },
   icon2: {
-    color: 'white',
+    color: "white",
     height: 30,
-    width: 30,
+    width: 30
   },
 
   mybutn: {
     borderRadius: 100,
     width: 100,
     backgroundColor: "white"
-
   },
   text1: {
     color: "white",
     fontSize: 16,
     fontStyle: "italic",
-    fontWeight: "bold",
+    fontWeight: "bold"
   },
   divider: {
     borderBottomColor: "black",
@@ -78,8 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     height: "100%",
     width: "100%",
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardView: {
     marginTop: 10,
@@ -87,12 +81,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     // marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardDesign: {
     borderRadius: 25
-
   },
 
   listitem: {
@@ -102,8 +94,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     height: 180,
-    flexDirection: "row",
-
+    flexDirection: "row"
   },
   transparent: {
     backgroundColor: "transparent",
@@ -113,9 +104,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     flexDirection: "row",
     borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-
+    justifyContent: "center",
+    alignItems: "center"
   },
   thumbnail: {
     backgroundColor: "transparent",
@@ -123,18 +113,13 @@ const styles = StyleSheet.create({
     height: 140,
     width: 140,
     borderRadius: 30,
-    marginLeft: 200,
-
-
-
+    marginLeft: 200
   },
   background: {
     width: null,
     flex: 1,
     borderRadius: 40,
-    backgroundColor: "transparent",
-
-
+    backgroundColor: "transparent"
   }
 });
 export default styles;

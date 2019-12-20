@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 //Import your stacks
 import ProductsTab from "./ProductsTab";
 import ProfileTab from "./ProfileTab";
-import Logout from "./SideBar"
+import Logout from "./SideBar";
 
 const BottomTabNav = createBottomTabNavigator(
   {
@@ -12,23 +12,19 @@ const BottomTabNav = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: {
-
-      tabBarOptions:
-      {
+      tabBarOptions: {
         tabBarVisible: false,
         showLabel: false,
+        headerTransparent: true,
 
         style: {
-          backgroundColor: "#4693e0",
-
+          backgroundColor: "#4693e0"
         },
         headerStyle: {
           backgroundColor: "#3dffcb",
-          fontWeight: 'bold',
+          fontWeight: "bold"
         }
-
-
-      },
+      }
     }
   }
 );
