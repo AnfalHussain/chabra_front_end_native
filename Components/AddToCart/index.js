@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, Button, Icon } from 'native-base';
+import { Text, Button, Icon } from "native-base";
 import { addItemToBasket } from "../../redux/actions";
 import { connect } from "react-redux";
 import IconBadge from "react-native-icon-badge";
@@ -8,70 +8,61 @@ import IconBadge from "react-native-icon-badge";
 import styles from "./styles";
 
 class AddToCart extends Component {
-
-    handleAddItem = () => {
-        if (this.props.products.find(product => product.id === this.props.product.id)){
-            if (this.props.products.find(product => product.id === this.props.product.id).quantity+1 <= this.props.product.stock){
-                const newItem = {
-                    id: this.props.product.id,
-                    name: this.props.product.name,
-                    price: this.props.product.price,
-                    quantity: 1,
-                };
-                this.props.addToBasket(newItem);
-            }
-        
-            else {
-                return alert("Exceeded stock!");
-            }
-        }
-        else {
-            const newItem = {
-                id: this.props.product.id,
-                name: this.props.product.name,
-                price: this.props.product.price,
-                quantity: 1,
-            };
-            this.props.addToBasket(newItem);
-        }
+  handleAddItem = () => {
+    if (
+      this.props.products.find(product => product.id === this.props.product.id)
+    ) {
+      if (
+        this.props.products.find(
+          product => product.id === this.props.product.id
+        ).quantity +
+          1 <=
+        this.props.product.stock
+      ) {
+        const newItem = {
+          id: this.props.product.id,
+          name: this.props.product.name,
+          price: this.props.product.price,
+          quantity: 1
+        };
+        this.props.addToBasket(newItem);
+      } else {
+        return alert("Exceeded stock!");
+      }
+    } else {
+      const newItem = {
+        id: this.props.product.id,
+        name: this.props.product.name,
+        price: this.props.product.price,
+        quantity: 1
+      };
+      this.props.addToBasket(newItem);
     }
+  };
 
-    render() {
-        return (
-
-           
-                <Button style={{backgroundColor:"#5fcf8d"}}
-                onPress={this.handleAddItem}>
-                <Text style={styles.text1}><Icon
-                    name="ios-add-circle"
-                    type="Ionicons"
-                    style={styles.icon2}
-                /> </Text>
-            </Button>
-          
-
-           
-
-        )
-    }
+  render() {
+    return (
+      <Button
+        style={{ backgroundColor: "#4dd0f7" }}
+        onPress={this.handleAddItem}
+      >
+        <Text style={styles.text1}>
+          <Icon name="ios-add-circle" type="Ionicons" style={styles.icon2} />{" "}
+        </Text>
+      </Button>
+    );
+  }
 }
-
-
-
 
 const mapDispatchToProps = dispatch => {
-    return {
-
-        addToBasket: item => dispatch(addItemToBasket(item))
-    };
-}
-
-const mapStateToProps = (state) => {
-    return {
-      products: state.basketReducer.items
-    };
+  return {
+    addToBasket: item => dispatch(addItemToBasket(item))
   };
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddToCart);
+};
+
+const mapStateToProps = state => {
+  return {
+    products: state.basketReducer.items
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(AddToCart);

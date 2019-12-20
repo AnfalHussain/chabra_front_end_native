@@ -46,9 +46,16 @@ class ProductsList extends Component {
       >
         <SearchBar />
         <Content style={{ marginTop: 10 }}>
-          <Grid>
-            <Col>{market}</Col>
-          </Grid>
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              alignContent: "flex-start",
+              alignItems: "center"
+            }}
+          >
+            {market}
+          </View>
         </Content>
       </ImageBackground>
     );
