@@ -42,10 +42,16 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   },
 
-  basketBtn: {
-    fontSize: 20,
+  icon: {
+    marginRight: 10,
     color: "white",
-    margin: 10
+    fontSize: 25
+  },
+  basketBtn: {
+    textAlign: "center",
+    alignSelf: "center",
+    fontSize: 22,
+    color: "white"
   },
 
   basketBtnOutofStock: {
@@ -80,7 +86,8 @@ const styles = StyleSheet.create({
   },
   order: {
     textAlign: "center",
-    alignSelf: "center"
+    alignSelf: "center",
+    fontSize: 24
   },
 
   mybutn: {
@@ -90,12 +97,20 @@ const styles = StyleSheet.create({
     width: 200,
     marginTop: 15
   },
+  addToCartBtn: {
+    backgroundColor: "#1654E7",
+    textAlign: "center",
+    alignSelf: "center",
+    borderRadius: 100,
+    width: 200,
+    height: 65
+  },
   myCard: {
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     borderRadius: 100,
     textAlign: "center",
     alignSelf: "center",
-    marginBottom: 20,
+    marginBottom: 10,
     width: 200
   },
   container: {
@@ -113,7 +128,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     textAlign: "center",
     alignSelf: "center",
-    marginBottom: 20,
+    marginBottom: 10,
     width: 370
   },
 

@@ -111,11 +111,12 @@ class ProductDetail extends Component {
             <CardItem style={styles.myCard}>
               <Button
                 rounded
+                style={{ backgroundColor: "#1654E7" }}
                 onPress={() =>
                   this.state.quantity > 0 && this.changeQuantity(-1)
                 }
               >
-                <Text>-</Text>
+                <Text style={{ fontSize: 26 }}>-</Text>
               </Button>
 
               <Item rounded style={styles.inputField}>
@@ -123,8 +124,12 @@ class ProductDetail extends Component {
                 {/* <Input
                     type="text" value={this.state.quantity} /> */}
               </Item>
-              <Button rounded onPress={() => this.changeQuantity(1)}>
-                <Text>+</Text>
+              <Button
+                style={{ backgroundColor: "#1654E7" }}
+                rounded
+                onPress={() => this.changeQuantity(1)}
+              >
+                <Text style={{ fontSize: 26 }}>+</Text>
               </Button>
             </CardItem>
             <View style={{ marginLeft: 130 }}>
@@ -133,13 +138,19 @@ class ProductDetail extends Component {
               </Text>
             </View>
 
-            <GradientButton
-              blueMarine
-              style={styles.mybutn}
-              onPressAction={this.handleAddItem}
-            >
-              <Text style={styles.basketBtn}>Add to Basket</Text>
-            </GradientButton>
+            <Button style={styles.addToCartBtn} onPress={this.handleAddItem}>
+              <Text style={styles.basketBtn}>
+                Add to Basket{" "}
+                <Icon
+                  onPress={() =>
+                    this.props.navigation.navigate("ShoppingBasketScreen")
+                  }
+                  name="shopping-basket"
+                  type="FontAwesome"
+                  style={styles.icon}
+                />
+              </Text>
+            </Button>
           </>
         );
       } else {
@@ -169,13 +180,12 @@ class ProductDetail extends Component {
               />
             </View>
 
-            <View style={styles.center}>
-              <Text style={{ fontFamily: "Futura", fontSize: 20 }}>
-                Description:
-              </Text>
-            </View>
+            {/* <View style={styles.center}>
+              
+            </View> */}
 
             <CardItem style={styles.myCard2}>
+              <Text style={styles.country}>Description:</Text>
               <Text style={styles.description}>{product.description}</Text>
             </CardItem>
 
