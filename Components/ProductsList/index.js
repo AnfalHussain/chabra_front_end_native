@@ -12,6 +12,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import ProductCard from "./ProductCard";
 import BasketBtn from "../BasketBtn";
 import SearchBar from "../SearchBar";
+import Logo from "./ChabraLogo.js";
 
 import wallpaper from "../../assets/wall.png";
 
@@ -20,7 +21,7 @@ import styles from "./styles";
 
 class ProductsList extends Component {
   static navigationOptions = {
-    title: "Chabra List",
+    headerTitle: <Logo />,
     headerRight: <BasketBtn />,
     headerStyle: {
       backgroundColor: "#3dffcb",
