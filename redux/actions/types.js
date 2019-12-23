@@ -12,3 +12,4 @@ export const REMOVE_ITEM = "REMOVE_ITEM";
 export const CHECKOUT = "CHECKOUT";
 export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 export const FETCH_ORDERS = "FETCH_ORDERS";
+export const STORE_CART = "STORE_CART";

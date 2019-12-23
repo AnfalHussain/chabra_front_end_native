@@ -3,20 +3,16 @@ import React, { Component } from "react";
 import { Text, CardItem, Icon, Left, Button } from "native-base";
 import { View } from "react-native";
 
-import moment from "moment";
 import { withNavigation } from "react-navigation";
-import { addItemToBasket } from "../../redux/actions";
 import { connect } from "react-redux";
 import { CardViewWithImage } from "react-native-simple-card-view";
-import GradientButton from "react-native-gradient-buttons";
-import { Col, Row, Grid } from "react-native-easy-grid";
+
 import IconBadge from "react-native-icon-badge";
 
 // Style
 import styles from "./styles";
 //Components
 import AddToCart from "../AddToCart";
-import { black } from "ansi-colors";
 
 class ProductCard extends Component {
   handlePress = () => {

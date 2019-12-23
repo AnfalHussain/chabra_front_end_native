@@ -26,6 +26,7 @@ class SearchBar extends Component {
         placeholder="Search Products..."
         onChangeText={this.handleSearch}
         value={query}
+        style={{ backgroundColor: "#FAFEFD" }}
       />
     );
   }
@@ -36,7 +37,4 @@ const mapDispatchToProps = dispatch => {
     filterProducts: query => dispatch(actionCreators.filterProducts(query))
   };
 };
-export default connect(
-  null,
-  mapDispatchToProps
-)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

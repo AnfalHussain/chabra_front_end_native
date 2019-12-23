@@ -18,7 +18,7 @@ const BottomTabNav = createBottomTabNavigator(
         headerTransparent: true,
 
         style: {
-          backgroundColor: "#4693e0"
+          backgroundColor: "#1654E7"
         },
         headerStyle: {
           backgroundColor: "#3dffcb",

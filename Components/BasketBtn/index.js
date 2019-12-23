@@ -3,7 +3,7 @@ import { Icon, View, Text } from "native-base";
 import { withNavigation } from "react-navigation";
 import IconBadge from "react-native-icon-badge";
 import { connect } from "react-redux";
-import styles from "./styles"
+import styles from "./styles";
 class ShoppingCartBtn extends Component {
   render() {
     if (this.props.items) {
@@ -23,20 +23,24 @@ class ShoppingCartBtn extends Component {
         <IconBadge
           MainElement={
             <Icon
-              onPress={() => this.props.navigation.navigate("ShoppingBasketScreen")}
+              onPress={() =>
+                this.props.navigation.navigate("ShoppingBasketScreen")
+              }
               name="shopping-basket"
               type="FontAwesome"
               style={styles.icon}
             />
           }
-          BadgeElement={<Text style={{ color: "#FFFFFF" }}>{this.props.items ? this.props.items.length : 0}</Text>}
+          BadgeElement={
+            <Text style={{ color: "#FFFFFF" }}>
+              {this.props.items ? this.props.items.length : 0}
+            </Text>
+          }
           IconBadgeStyle={{
             width: 20,
             height: 20,
-            backgroundColor: "#364bff",
-            left: 20,
-
-
+            backgroundColor: "#117efa",
+            left: 20
           }}
           Hidden={this.props.items && this.props.items.length == 0}
         />
