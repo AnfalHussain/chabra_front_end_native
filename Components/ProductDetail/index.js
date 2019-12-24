@@ -110,13 +110,23 @@ class ProductDetail extends Component {
           <>
             <CardItem style={styles.myCard}>
               <Button
-                rounded
-                style={{ backgroundColor: "#1654E7" }}
+                style={{
+                  backgroundColor: "#1654E7",
+                  borderRadius: 50
+                }}
                 onPress={() =>
                   this.state.quantity > 0 && this.changeQuantity(-1)
                 }
               >
-                <Text style={{ fontSize: 26 }}>-</Text>
+                <Icon
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 22,
+                    fontFamily: "Futura"
+                  }}
+                  name="md-remove"
+                  type="Ionicons"
+                ></Icon>
               </Button>
 
               <Item rounded style={styles.inputField}>
@@ -125,15 +135,25 @@ class ProductDetail extends Component {
                     type="text" value={this.state.quantity} /> */}
               </Item>
               <Button
-                style={{ backgroundColor: "#1654E7" }}
-                rounded
+                style={{
+                  backgroundColor: "#1654E7",
+                  borderRadius: 60
+                }}
                 onPress={() => this.changeQuantity(1)}
               >
-                <Text style={{ fontSize: 26 }}>+</Text>
+                <Icon
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 22,
+                    fontFamily: "Futura"
+                  }}
+                  name="md-add"
+                  type="Ionicons"
+                ></Icon>
               </Button>
             </CardItem>
             <View style={{ marginLeft: 130 }}>
-              <Text style={{ color: red, marginLeft: 20 }}>
+              <Text style={{ color: "red", marginLeft: 20 }}>
                 {this.limited()}
               </Text>
             </View>
