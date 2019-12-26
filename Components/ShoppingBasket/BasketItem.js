@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { removeItemFromBasket } from "../../redux/actions";
 
 // NativeBase Components
-import { Text, Left, Body, Right, Button, ListItem, Icon } from "native-base";
+import { Text, Left, Body, Button, ListItem, Icon } from "native-base";
 
 class BasketItem extends Component {
   render() {
@@ -15,11 +17,20 @@ class BasketItem extends Component {
           </Text>
         </Left>
         <Body>
-          <Text style={{ color: "black", marginLeft: 60 }}>{item.quantity}</Text>
+          <Text style={{ color: "black", marginLeft: 60 }}>
+            {item.quantity}
+          </Text>
         </Body>
-        <Button transparent>
+        <Button
+          transparent
+          onPress={() => this.props.removeItemFromBasket(item)}
+        >
           <Text>
-            <Icon name="ios-trash" type="Ionicons" style={{ color: "#1a215c", fontSize: 32 }} />
+            <Icon
+              name="ios-trash"
+              type="Ionicons"
+              style={{ color: "#1a215c", fontSize: 32 }}
+            />
           </Text>
         </Button>
       </ListItem>
@@ -27,6 +38,8 @@ class BasketItem extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  removeItemFromBasket: item => dispatch(removeItemFromBasket(item))
+});
 
-
-export default BasketItem;
+export default connect(null, mapDispatchToProps)(BasketItem);

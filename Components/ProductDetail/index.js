@@ -27,8 +27,6 @@ import {
 
 //Styles
 import styles from "./styles";
-import GradientButton from "react-native-gradient-buttons";
-import { red } from "ansi-colors";
 
 class ProductDetail extends Component {
   state = {
