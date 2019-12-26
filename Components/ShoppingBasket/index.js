@@ -30,6 +30,13 @@ class ShoppingBasket extends Component {
     }
   };
 
+  //   componentDidUpdate(prevProps) {
+  //     if (prevProps.items !== this.props.items) {
+  //       // fetch basket items again
+
+  //     }
+  // }
+
   handlePress = () => {
     if (!this.props.user) {
       this.props.navigation.push("LoginScreen");
@@ -55,11 +62,7 @@ class ShoppingBasket extends Component {
     let basketItems;
     if (items) {
       basketItems = items.map((item, index) => (
-        <BasketItem
-          item={item}
-          key={index}
-          removeItemFromBasket={this.props.removeItemFromBasket}
-        />
+        <BasketItem item={item} key={index} />
       ));
     }
 

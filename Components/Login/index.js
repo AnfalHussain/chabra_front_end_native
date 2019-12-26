@@ -163,7 +163,12 @@ class Login extends Component {
               }
             >
               <Text
-                style={{ color: "white", fontFamily: "Futura", fontSize: 22 }}
+                style={{
+                  color: "white",
+                  fontFamily: "Futura",
+                  fontSize: 22,
+                  fontWeight: "normal"
+                }}
               >
                 Login
               </Text>
@@ -180,9 +185,10 @@ class Login extends Component {
             >
               <Text
                 style={{
-                  color: "#0d1a80",
+                  color: "white",
                   fontFamily: "Avenir",
-                  fontSize: 22
+                  fontSize: 22,
+                  fontWeight: "200"
                 }}
               >
                 New user? Sign up
@@ -210,8 +216,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default withNavigation(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Login)
+  connect(mapStateToProps, mapDispatchToProps)(Login)
 );
