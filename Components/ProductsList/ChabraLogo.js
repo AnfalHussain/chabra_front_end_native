@@ -9,7 +9,6 @@ class ChabraLogo extends Component {
         style={{
           width: 100,
           height: 100,
-          textAlign: "center",
           alignSelf: "center"
         }}
         bordered

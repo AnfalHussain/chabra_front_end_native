@@ -53,9 +53,6 @@ class ProductCard extends Component {
                   }
                   contentFontFamily={"Futura"}
                   contentFontSize={15}
-                  contentMargin={
-                    ((top = 5), (bottom = 5), (right = 5), (left = 5))
-                  }
                   roundedImage={false}
                   style={styles.transparent}
                 />

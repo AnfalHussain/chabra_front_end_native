@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   text: {
     color: "white",
@@ -23,7 +22,21 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontStyle: "italic",
-    fontWeight: "bold",
+    fontWeight: "bold"
+  },
+
+  viewMessage: {
+    backgroundColor: "rgba(255, 255, 255, 0.52)",
+    opacity: 1,
+    margin: 10,
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  noOrdersMessage: {
+    color: "black",
+    fontSize: 22,
+    margin: 30
   },
   divider: {
     borderBottomColor: "black",
@@ -39,8 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     height: "100%",
     width: "100%",
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardView: {
     marginTop: 10,
@@ -48,12 +60,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     // marginBottom: 10,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   cardDesign: {
     borderRadius: 50
-
   },
 
   listitem: {
@@ -63,8 +73,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     height: 150,
-    flexDirection: "row",
-
+    flexDirection: "row"
   },
   transparent: {
     backgroundColor: "transparent",
@@ -73,26 +82,20 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     flexDirection: "row",
-    borderRadius: 50,
-
+    borderRadius: 50
   },
   thumbnail: {
     backgroundColor: "white",
     opacity: 1,
     height: 140,
     width: 140,
-    borderRadius: 30,
-
-
-
+    borderRadius: 30
   },
   background: {
     width: null,
     flex: 1,
     borderRadius: 40,
-    backgroundColor: "transparent",
-
-
+    backgroundColor: "transparent"
   }
 });
 export default styles;
