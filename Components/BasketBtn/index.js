@@ -6,9 +6,11 @@ import { connect } from "react-redux";
 import styles from "./styles";
 class ShoppingCartBtn extends Component {
   render() {
-    if (this.props.items) {
+    const items = this.props.items;
+
+    if (items) {
       let n = 0;
-      this.props.items.map(item => {
+      items.map(item => {
         n += item.quantity;
       });
     }
@@ -32,9 +34,7 @@ class ShoppingCartBtn extends Component {
             />
           }
           BadgeElement={
-            <Text style={{ color: "#FFFFFF" }}>
-              {this.props.items ? this.props.items.length : 0}
-            </Text>
+            <Text style={{ color: "#FFFFFF" }}>{items ? items.length : 0}</Text>
           }
           IconBadgeStyle={{
             width: 20,
@@ -42,7 +42,7 @@ class ShoppingCartBtn extends Component {
             backgroundColor: "#117efa",
             left: 20
           }}
-          Hidden={this.props.items && this.props.items.length == 0}
+          Hidden={items && items.length == 0}
         />
       </View>
     );

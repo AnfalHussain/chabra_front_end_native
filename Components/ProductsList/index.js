@@ -22,7 +22,9 @@ import styles from "./styles";
 class ProductsList extends Component {
   static navigationOptions = {
     headerTitle: <Logo />,
+
     headerRight: <BasketBtn />,
+
     headerStyle: {
       backgroundColor: "#3dffcb",
       fontWeight: "bold"
@@ -66,7 +68,8 @@ class ProductsList extends Component {
 const mapStateToProps = state => ({
   products: state.productsReducer.products,
   filteredProducts: state.productsReducer.filteredProducts,
-  loading: state.productsReducer.loading
+  loading: state.productsReducer.loading,
+  items: state.basketReducer.items
 });
 
 const mapDispatchToProps = dispatch => {
