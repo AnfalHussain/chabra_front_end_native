@@ -30,18 +30,13 @@ class ShoppingBasket extends Component {
     }
   };
 
-  //   componentDidUpdate(prevProps) {
-  //     if (prevProps.items !== this.props.items) {
-  //       // fetch basket items again
-
-  //     }
-  // }
-
   handlePress = () => {
     if (!this.props.user) {
       this.props.navigation.push("LoginScreen");
     } else {
-      this.props.navigation.push("SummaryScreen");
+      if (this.props.items.length == 0)
+        alert("Your Basket is empty, add some products to proceed");
+      else this.props.navigation.push("SummaryScreen");
     }
   };
   totalPrice = () => {
