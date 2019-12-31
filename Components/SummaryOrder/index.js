@@ -33,7 +33,7 @@ class OrderSummary extends Component {
 
   state = {
     total: 0,
-
+    name: "",
     area: "",
     street: "",
     block: "",
@@ -53,6 +53,7 @@ class OrderSummary extends Component {
       baskets: this.props.items,
 
       address: {
+        name: this.state.name,
         area: this.state.area,
         street: this.state.street,
         block: this.state.block,
@@ -126,6 +127,23 @@ class OrderSummary extends Component {
           >
             Shipping Address:
           </Text>
+          <Item rounded style={styles.item}>
+            <Input
+              style={{
+                color: "black",
+                margin: 10,
+                fontSize: 18,
+                fontFamily: "Futura",
+                backgroundColor: "transparent",
+                height: 20
+              }}
+              autoCorrect={false}
+              autoCapitalize="none"
+              placeholder="Address Name"
+              value={this.state.name}
+              onChangeText={name => this.setState({ name })}
+            />
+          </Item>
 
           <Item rounded style={styles.item}>
             <Input

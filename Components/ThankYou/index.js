@@ -6,8 +6,8 @@ import { withNavigation } from "react-navigation";
 import wallpaper from "../../assets/wall.png";
 import logo from "../../assets/chabraLogo.png";
 
-import { ImageBackground, Image } from "react-native"
-import GradientButton from 'react-native-gradient-buttons';
+import { ImageBackground, Image } from "react-native";
+import GradientButton from "react-native-gradient-buttons";
 
 // NativeBase Components
 import {
@@ -27,22 +27,14 @@ import {
 } from "native-base";
 import OrderHistory from "../OrderHistory";
 
-
-
 class ThankYou extends Component {
-
   static navigationOptions = ({ navigation }) => {
-
     return {
-      header: null,
+      header: null
     };
   };
 
-
-
-
   render() {
-
     return (
       <ImageBackground
         source={wallpaper}
@@ -53,32 +45,46 @@ class ThankYou extends Component {
           <List>
             <ListItem style={{ borderBottomWidth: 0 }}>
               <Body>
-               
-                
-
-                  <Body>
-                  <Title>Thank you for ordering with us!</Title>
-                  </Body>
-
-           
+                <Body>
+                  <Title>Thank you for using Chabra!</Title>
+                </Body>
               </Body>
             </ListItem>
-            <GradientButton radius={40} style={{
-              width: 380, marginTop: 10, textAlign: "center",
-              alignSelf: "center"
-            }} onPressAction={() => this.props.navigation.popToTop()}
+            <GradientButton
+              radius={40}
+              style={{
+                width: 380,
+                marginTop: 10,
+                textAlign: "center",
+                alignSelf: "center"
+              }}
+              onPressAction={() => this.props.navigation.popToTop()}
             >
-              <Text style={{ color: "white", fontFamily: "Futura", fontSize: 22, }}>Back to Chabra!</Text>
+              <Text
+                style={{ color: "white", fontFamily: "Futura", fontSize: 22 }}
+              >
+                Back to Chabra!
+              </Text>
             </GradientButton>
 
-            <GradientButton radius={40} style={{
-              width: 380, marginTop: 10, textAlign: "center",
-              alignSelf: "center"
-            }} onPressAction={() => this.props.navigation.push("OrderListScreen")}
+            <GradientButton
+              radius={40}
+              style={{
+                width: 380,
+                marginTop: 10,
+                textAlign: "center",
+                alignSelf: "center"
+              }}
+              onPressAction={() =>
+                this.props.navigation.push("OrderListScreen")
+              }
             >
-              <Text style={{ color: "white", fontFamily: "Futura", fontSize: 22, }}>Orders History</Text>
+              <Text
+                style={{ color: "white", fontFamily: "Futura", fontSize: 22 }}
+              >
+                Orders History
+              </Text>
             </GradientButton>
-
           </List>
           <Body>
             <Label style={{ color: "red", opacity: 0.6 }} />
@@ -92,9 +98,4 @@ const mapStateToProps = state => ({
   profile: state.authReducer.profile
 });
 
-
-export default withNavigation(
-  connect(
-    mapStateToProps
-  )(ThankYou)
-);
+export default withNavigation(connect(mapStateToProps)(ThankYou));
