@@ -3,15 +3,9 @@ import { connect } from "react-redux";
 import { removeItemFromBasket, checkoutBasket } from "../../redux/actions";
 
 // NativeBase Components
-import {
-  Text,
-  List,
-  Button,
-  Title,
-  Container,
-  Body,
-  ListItem
-} from "native-base";
+import { Text, List, Container, ListItem } from "native-base";
+
+import { Alert } from "react-native";
 import GradientButton from "react-native-gradient-buttons";
 import styles from "./styles";
 
@@ -35,7 +29,7 @@ class ShoppingBasket extends Component {
       this.props.navigation.push("LoginScreen");
     } else {
       if (this.props.items.length == 0)
-        alert("Your Basket is empty, add some products to proceed");
+        Alert.alert("Your Basket Is Empty", "Add some products to proceed");
       else this.props.navigation.push("SummaryScreen");
     }
   };

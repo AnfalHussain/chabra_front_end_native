@@ -4,10 +4,10 @@ import { Icon } from "native-base";
 // Components:
 import Profile from "../Components/Profile";
 import EditProfile from "../Components/EditProfile";
-
 import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import OrderList from "../Components/OrderHistory";
+import OrderDetails from "../Components/OrderDetails";
 
 import { createStackNavigator } from "react-navigation-stack";
 
@@ -17,7 +17,8 @@ const ProfileTab = createStackNavigator(
     LoginScreen: Login,
     SignupScreen: Signup,
     EditProfileScreen: EditProfile,
-    OrderListScreen: OrderList
+    OrderListScreen: OrderList,
+    OrderDetailScreen: OrderDetails
   },
 
   {
