@@ -8,7 +8,7 @@ import Login from "../Components/Login";
 import Signup from "../Components/Signup";
 import OrderList from "../Components/OrderHistory";
 import OrderDetails from "../Components/OrderDetails";
-
+import Adresses from "../Components/Addresses/Address";
 import { createStackNavigator } from "react-navigation-stack";
 
 const ProfileTab = createStackNavigator(
@@ -18,7 +18,8 @@ const ProfileTab = createStackNavigator(
     SignupScreen: Signup,
     EditProfileScreen: EditProfile,
     OrderListScreen: OrderList,
-    OrderDetailScreen: OrderDetails
+    OrderDetailScreen: OrderDetails,
+    AdressesScreen: Adresses
   },
 
   {

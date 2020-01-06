@@ -2,8 +2,8 @@ import * as actionTypes from "../actions/types";
 
 const initialState = {
   items: [],
-  orders:[],
-  orderLoading:true
+  orders: [],
+  orderLoading: true
 };
 
 const basketReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const basketReducer = (state = initialState, action) => {
 
       let checkItem = state.items.find(item => item.id === newItem.id);
       if (checkItem) {
-        checkItem.quantity+=newItem.quantity
+        checkItem.quantity += newItem.quantity;
         return {
           ...state,
           items: [...state.items]
@@ -32,17 +32,23 @@ const basketReducer = (state = initialState, action) => {
         items: filteredItems
       };
 
+    case actionTypes.UPDATE_ASYNC_STORAGE:
+      return {
+        ...state,
+        items: [...state.items]
+      };
+
     case actionTypes.CHECKOUT:
       return {
-        orders:state.orders.concat(action.payload),
+        orders: state.orders.concat(action.payload),
         items: []
       };
     case actionTypes.FETCH_ORDERS:
-      const orders = action.payload
-      return{
-      orders: orders,
-      orderLoading: false
-      }
+      const orders = action.payload;
+      return {
+        orders: orders,
+        orderLoading: false
+      };
     default:
       return state;
   }

@@ -10,19 +10,18 @@ const styles = StyleSheet.create({
     borderRadius: 30
   },
   text: {
-    color: "white",
+    color: "rgba(0, 0, 0, 0.85)",
     fontSize: 22,
     fontWeight: "bold",
     marginBottom: 30,
-
     opacity: 1
   },
 
   text1: {
-    color: "white",
-    fontSize: 16,
+    color: "rgba(0, 0, 0, 0.7)",
+    fontSize: 18,
     fontStyle: "italic",
-    fontWeight: "bold"
+    fontWeight: "500"
   },
 
   viewMessage: {
@@ -47,20 +46,17 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-
-    opacity: 0.3,
-    backgroundColor: "black",
+    backgroundColor: "rgba(255, 255, 255, 0.52)",
     height: "100%",
     width: "100%",
-    borderRadius: 30
+    borderRadius: 5
   },
   cardView: {
     marginTop: 10,
-
     marginLeft: 10,
     marginRight: 10,
     // marginBottom: 10,
-    borderRadius: 30
+    borderRadius: 5
   },
   cardDesign: {
     borderRadius: 50
@@ -72,7 +68,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    height: 150,
+    height: 100,
     flexDirection: "row"
   },
   transparent: {
@@ -82,15 +78,9 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     flexDirection: "row",
-    borderRadius: 50
+    borderRadius: 5
   },
-  thumbnail: {
-    backgroundColor: "white",
-    opacity: 1,
-    height: 140,
-    width: 140,
-    borderRadius: 30
-  },
+
   background: {
     width: null,
     flex: 1,

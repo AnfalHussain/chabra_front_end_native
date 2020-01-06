@@ -18,10 +18,7 @@ import styles from "./styles";
 
 const OrderCard = ({ navigation, order }) => {
   const handlePress = () => {
-    navigation.navigate(
-      "OrderDetailScreen",
-      { orderID: order.id }
-    );
+    navigation.navigate("OrderDetailScreen", { orderID: order.id });
   };
   return (
     <Content style={styles.container}>
@@ -35,11 +32,10 @@ const OrderCard = ({ navigation, order }) => {
           <CardItem style={styles.transparent}>
             <Left>
               <Text style={styles.text}>
-                Order#: {(order.order_ref).toUpperCase()}
+                Order#: {order.order_ref.toUpperCase()}
                 {"\n"}
-                <Text style={styles.text1}>
-                  Total: {order.total} KWD
-                </Text>
+                {"\n"}
+                <Text style={styles.text1}>Total: {order.total} KWD</Text>
                 {"\n"}
                 <Text style={styles.text1}>
                   Date: {moment(order.date_time).calendar()}

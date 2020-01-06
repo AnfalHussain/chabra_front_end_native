@@ -14,6 +14,7 @@ import { ImageBackground, View, ScrollView } from "react-native";
 // Component
 import BasketItem from "./BasketItem";
 import wallpaper from "../../assets/wall.png";
+import { AsyncStorage } from "react-native";
 
 class ShoppingBasket extends Component {
   static navigationOptions = {
@@ -22,6 +23,20 @@ class ShoppingBasket extends Component {
       backgroundColor: "#3dffcb",
       fontWeight: "bold"
     }
+  };
+
+  state = {
+    items: null // products in the shopping basket
+  };
+
+  componentDidMount = async () => {
+    const itemsUnparsed = await AsyncStorage.getItem("items");
+    const itemsParsed = JSON.parse(itemsUnparsed);
+
+    await this.setState({
+      items: itemsParsed
+    });
+    console.log("this.state.items: ", this.state.items);
   };
 
   handlePress = () => {

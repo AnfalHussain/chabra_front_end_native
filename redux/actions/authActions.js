@@ -14,6 +14,10 @@ export const fetchProfile = () => async dispatch => {
   }
 };
 
+//CREATE ADDRESS
+
+//Edit ADDRESSES
+
 export const login = (userData, navigation) => {
   return async dispatch => {
     try {

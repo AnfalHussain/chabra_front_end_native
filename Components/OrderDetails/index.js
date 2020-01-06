@@ -6,35 +6,46 @@ import moment from "moment";
 import { ImageBackground } from "react-native";
 import wallpaper from "../../assets/wall.png";
 
-
 // NativeBase Components
-import { Title, Text, Body, Content, Container, Card, CardItem } from "native-base";
+import {
+  Title,
+  Text,
+  Body,
+  Content,
+  Container,
+  Card,
+  CardItem
+} from "native-base";
 
 // Style
 import styles from "./styles";
-import BasketItem from "../SummaryOrder/BasketItem"
+import BasketItem from "../SummaryOrder/BasketItem";
 
 class OrderDetail extends Component {
-
-
-
   static navigationOptions = ({ order, navigation }) => {
     return {
       title: "Order Detail",
       headerStyle: {
         backgroundColor: "#3dffcb",
-        fontWeight: 'bold',
+        fontWeight: "bold"
       }
     };
   };
 
   render() {
-    let order = this.props.profile.order_history.find(order => order.id === this.props.navigation.getParam("orderID"))
-    let orderAddress = this.props.profile.addresses.find(address => address.id === order.address)
-    const getOrderITem = () => order.baskets.map(item => <Text style={styles.text}>{item.product.name} - {item.product.price} KWD - Qty: {item.quantity} {"\n"} </Text>
-
-
-    )
+    let order = this.props.profile.order_history.find(
+      order => order.id === this.props.navigation.getParam("orderID")
+    );
+    let orderAddress = this.props.profile.addresses.find(
+      address => address.id === order.address
+    );
+    const getOrderItem = () =>
+      order.baskets.map(item => (
+        <Text style={styles.text}>
+          {item.product.name} - {item.product.price} KWD - Qty: {item.quantity}{" "}
+          {"\n"}{" "}
+        </Text>
+      ));
     return (
       <Container>
         <ImageBackground
@@ -43,65 +54,52 @@ class OrderDetail extends Component {
         >
           <Content padder>
             <Card style={styles.container}>
-              <CardItem
-                style={styles.middleText}
-              >
+              <CardItem style={styles.middleText}>
                 <Text style={styles.middleText}>
-
-                  Order Ref: {(order.order_ref).toUpperCase()}</Text>
+                  Order Number: {order.order_ref.toUpperCase()}
+                </Text>
               </CardItem>
               <CardItem style={styles.middleText}>
                 <Body>
-                  <Text style={styles.titleOfDetail}>Shipping Address:
-
-                  </Text>
+                  <Text style={styles.titleOfDetail}>Shipping Address:</Text>
                   <Text style={styles.text}>
                     Area: {orderAddress.area} {"\n"}
                     Street: {orderAddress.street} {"\n"}
-                    Block: {orderAddress.block}{"\n"}
+                    Block: {orderAddress.block}
+                    {"\n"}
                   </Text>
                   <View style={styles.hairLine} />
-                  <Text style={styles.titleOfDetail}>Items ordered:</Text>
+                  <Text style={styles.titleOfDetail}>Items Ordered:</Text>
 
-                  <View style={styles.text}>
-                    {getOrderITem()}
-                  </View>
+                  <View style={styles.text}>{getOrderItem()}</View>
 
                   <View style={styles.hairLine} />
 
                   <Text style={styles.titleOfDetail}>Total Price: </Text>
 
-                  <Text style={styles.text}>
-                    {order.total}
-                  </Text>
-
+                  <Text style={styles.text}>{order.total} KWD</Text>
 
                   <View style={styles.hairLine} />
                   <Text style={styles.titleOfDetail}>Order Date:</Text>
 
                   <Text style={styles.text}>
-                    {moment(order.date_time).calendar()}{"\n"}
+                    {moment(order.date_time).calendar()}
+                    {"\n"}
                   </Text>
-
                 </Body>
               </CardItem>
-
             </Card>
           </Content>
         </ImageBackground>
-
       </Container>
     );
   }
 }
 
-
 const mapStateToProps = state => ({
   user: state.authReducer.user,
   profile: state.authReducer.profile,
-  loading: state.authReducer.profileLoading,
-
+  loading: state.authReducer.profileLoading
 });
-
 
 export default connect(mapStateToProps)(OrderDetail);

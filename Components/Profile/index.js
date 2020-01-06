@@ -129,22 +129,13 @@ class Profile extends Component {
               captureGestures="open"
             >
               <CardItem style={{ backgroundColor: "transparent" }}>
-                <ImageBackground
-                  source={profileHeader}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "transparent"
-                  }}
-                >
-                  <View style={styles.center}>
-                    <Image
-                      style={styles.image}
-                      bordered
-                      source={{ uri: `http://134.209.242.76/${profile.image}` }}
-                    ></Image>
-                  </View>
-                </ImageBackground>
+                <View style={styles.center}>
+                  <Image
+                    style={styles.image}
+                    bordered
+                    source={{ uri: `http://134.209.242.76/${profile.image}` }}
+                  ></Image>
+                </View>
               </CardItem>
 
               <Content>

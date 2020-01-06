@@ -2,32 +2,28 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   hairLine: {
-    backgroundColor: '#cccccc',
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     height: 2,
     marginBottom: 22,
     marginTop: 22,
 
-    width: 340
+    width: 336
   },
 
   container: {
     backgroundColor: "rgba(255, 255, 255, 0.52)",
     opacity: 1,
     marginTop: 15,
-
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 15,
-    borderRadius: 30,
-
+    borderRadius: 30
   },
   text: {
-    color: "black",
+    color: "rgba(0, 0, 0, 0.6)",
     fontSize: 18,
     marginLeft: 16,
-    fontFamily: "Futura",
-    justifyContent: "center",
-    alignItems: "center"
+    fontFamily: "Futura"
   },
   divider: {
     borderBottomColor: "black",
@@ -42,20 +38,18 @@ const styles = StyleSheet.create({
     marginBottom: 22,
     color: "black",
     fontSize: 20,
-    fontWeight: "bold",
-
+    fontWeight: "bold"
   },
-
 
   middleText: {
     marginTop: 12,
     marginBottom: 8,
     backgroundColor: "transparent",
-    color: "#191b73",
+    color: "rgba(0, 0, 0, 0.7)",
     fontWeight: "bold",
     fontSize: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
     // alignSelf: "center",
     // flex: 1,
     // justifyContent: 'center',
