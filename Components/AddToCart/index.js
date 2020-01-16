@@ -43,7 +43,7 @@ class AddToCart extends Component {
   render() {
     return (
       <Button
-        style={{ backgroundColor: "#1654E7" }}
+        style={{ backgroundColor: "#535859" }}
         onPress={this.handleAddItem}
       >
         <Text style={styles.text1}>

@@ -13,12 +13,21 @@ import {
   Drawer,
   Accordion
 } from "native-base";
+
 import { ImageBackground, View } from "react-native";
 
-//Components
-import wallpaper from "../../assets/wall.png";
-import SideBar from "../../Navigation/SideBar";
+import {
+  Collapse,
+  CollapseHeader,
+  CollapseBody
+} from "accordion-collapse-react-native";
 
+//Assets
+import wallpaper from "../../assets/wall.png";
+
+//Components
+import SideBar from "../../Navigation/SideBar";
+import AddressCard from "./AddressCard";
 import styles from "./styles";
 
 class Address extends Component {
@@ -43,17 +52,14 @@ class Address extends Component {
         </ImageBackground>
       );
     } else {
+      const addresses = profile.addresses.map(address => {
+        <AddressCard addressTitle={address.name} />;
+      });
       const dataArray = profile.addresses.map(address => {
         return {
           title: address.name
         };
       });
-
-      // [
-      //     { title: "First Element", content: "Lorem ipsum dolor sit amet" },
-      //     { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
-      //     { title: "Third Element", content: "Lorem ipsum dolor sit amet" }
-      //   ];
 
       return (
         <>
@@ -83,6 +89,21 @@ class Address extends Component {
                     </Body>
                   </CardItem>
                 </Card>
+                <>
+                  <Collapse>
+                    <CollapseHeader>
+                      <View>
+                        <Text>where are you</Text>
+
+                        {/* <Text>{this.props.addressTitle}</Text> */}
+                      </View>
+                    </CollapseHeader>
+                    <CollapseBody>
+                      <Text>Ta daa!</Text>
+                    </CollapseBody>
+                  </Collapse>
+                </>
+                {/* <View>{addresses}</View> */}
               </Content>
             </Drawer>
           </ImageBackground>

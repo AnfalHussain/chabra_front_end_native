@@ -26,7 +26,7 @@ class ProductsList extends Component {
     headerRight: <BasketBtn />,
 
     headerStyle: {
-      backgroundColor: "#3dffcb",
+      backgroundColor: "#F4F7F2",
       fontWeight: "bold"
     }
   };
@@ -43,24 +43,26 @@ class ProductsList extends Component {
       });
     }
     return (
-      <ImageBackground
-        source={wallpaper}
-        style={{ width: "100%", height: "100%" }}
-      >
-        <SearchBar />
-        <Content style={{ marginTop: 10 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              flexWrap: "wrap",
-              alignContent: "flex-start",
-              alignItems: "center"
-            }}
-          >
-            {market}
-          </View>
-        </Content>
-      </ImageBackground>
+      <>
+        <ImageBackground
+          source={wallpaper}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <SearchBar />
+          <Content style={{ marginTop: 10 }}>
+            <View
+              style={{
+                flexDirection: "row",
+                flexWrap: "wrap",
+                alignContent: "flex-start",
+                alignItems: "center"
+              }}
+            >
+              {market}
+            </View>
+          </Content>
+        </ImageBackground>
+      </>
     );
   }
 }

@@ -34,7 +34,7 @@ const ProductsTab = createStackNavigator(
         />
       ),
       tabBarOptions: {
-        activeTintColor: "#1654E7",
+        activeTintColor: "#00072D",
         showLabel: false,
 
         style: {

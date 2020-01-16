@@ -39,7 +39,7 @@ class ShoppingCartBtn extends Component {
           IconBadgeStyle={{
             width: 20,
             height: 20,
-            backgroundColor: "#117efa",
+            backgroundColor: "#E63946",
             left: 20
           }}
           Hidden={items && items.length == 0}

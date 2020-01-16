@@ -73,7 +73,7 @@ class ProductCard extends Component {
             IconBadgeStyle={{
               width: 100,
               height: 30,
-              backgroundColor: "#117efa",
+              backgroundColor: "#E63946",
               top: 20
             }}
             Hidden={
