@@ -20,7 +20,7 @@ class ShoppingBasket extends Component {
   static navigationOptions = {
     title: "Shopping Basket",
     headerStyle: {
-      backgroundColor: "#3dffcb",
+      backgroundColor: "#F4F7F2",
       fontWeight: "bold"
     }
   };
@@ -87,8 +87,10 @@ class ShoppingBasket extends Component {
               <Text style={styles.total}>Total: {this.totalPrice()} KWD</Text>
             </ListItem>
             <GradientButton
+              gradientBegin="black"
+              gradientEnd="#828A8C"
               width="90%"
-              blueMarine
+              gradientDirection="vertical"
               radius={40}
               style={styles.roundedBtn}
               onPressAction={() => this.handlePress()}

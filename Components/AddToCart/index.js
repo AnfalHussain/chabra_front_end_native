@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Text, Button, Icon } from "native-base";
 import { addItemToBasket } from "../../redux/actions";
 import { connect } from "react-redux";
-import IconBadge from "react-native-icon-badge";
 
 // Style
 import styles from "./styles";

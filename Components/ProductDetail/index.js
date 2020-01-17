@@ -38,7 +38,7 @@ class ProductDetail extends Component {
       title: navigation.getParam("productName"),
       headerRight: <BasketBtn />,
       headerStyle: {
-        backgroundColor: "#3dffcb",
+        backgroundColor: "#F4F7F2",
         fontWeight: "bold"
       }
     };

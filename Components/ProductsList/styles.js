@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 20,
     marginTop: 20,
-    borderRadius: 15,
+    borderRadius: 35,
     justifyContent: "center",
     alignItems: "center"
   },
