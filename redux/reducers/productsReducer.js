@@ -23,6 +23,21 @@ const reducer = (state = initialState, action) => {
           return `${product.name}`.toLowerCase().includes(action.payload);
         })
       };
+
+    case actionTypes.FILTER_PRODUCTS_BY_CATEGORY:
+      const newCategory = action.payload;
+      return {
+        ...state,
+        filteredProducts: state.filteredProducts.filter(
+          product => product.category === newCategory
+        )
+      };
+
+    case actionTypes.CLEAR_FILTER_PRODUCTS_BY_CATEGORY:
+      return {
+        ...state,
+        filteredProducts: state.products
+      };
     case actionTypes.LOADING:
       return {
         ...state,

@@ -20,6 +20,17 @@ export const filterProducts = query => {
   };
 };
 
+export const filterProductsByCategory = category => {
+  return {
+    type: actionTypes.FILTER_PRODUCTS_BY_CATEGORY,
+    payload: category
+  };
+};
+
+export const clearFilterProductsByCategory = () => ({
+  type: actionTypes.CLEAR_FILTER_PRODUCTS_BY_CATEGORY
+});
+
 export const setLoading = () => ({
   type: actionTypes.LOADING
 });

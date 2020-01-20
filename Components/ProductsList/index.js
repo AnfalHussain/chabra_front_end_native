@@ -12,6 +12,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import ProductCard from "./ProductCard";
 import BasketBtn from "../BasketBtn";
 import SearchBar from "../SearchBar";
+import FilterItems from "../FilterItems";
 import Logo from "./ChabraLogo.js";
 
 import wallpaper from "../../assets/wall.png";
@@ -49,6 +50,7 @@ class ProductsList extends Component {
           style={{ width: "100%", height: "100%" }}
         >
           <SearchBar />
+          <FilterItems />
           <Content style={{ marginTop: 10 }}>
             <View
               style={{
