@@ -87,11 +87,11 @@ class ShoppingBasket extends Component {
               <Text style={styles.total}>Total: {this.totalPrice()} KWD</Text>
             </ListItem>
             <GradientButton
-              gradientBegin="black"
-              gradientEnd="#828A8C"
-              width="90%"
-              gradientDirection="vertical"
               radius={40}
+              gradientDirection="horizontal"
+              gradientBegin="#FFC919"
+              gradientEnd="#EF8A08"
+              width="90%"
               style={styles.roundedBtn}
               onPressAction={() => this.handlePress()}
             >

@@ -18,7 +18,7 @@ import {
 import { ImageBackground, View, Image } from "react-native";
 
 //Components
-import wallpaper from "../../assets/wall.png";
+import wallpaper from "../../assets/gray.png";
 import SideBar from "../../Navigation/SideBar";
 import profileHeader from "../../assets/profileHeader3.jpg";
 

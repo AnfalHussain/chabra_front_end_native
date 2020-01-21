@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../../redux/actions/authActions";
 import { withNavigation } from "react-navigation";
 
-import wallpaper from "../../assets/wall.png";
+import wallpaper from "../../assets/gray.png";
 import logo from "../../assets/chabraLogo.png";
 
 import { ImageBackground, Image, View } from "react-native";
@@ -93,7 +93,7 @@ class Login extends Component {
                     rounded
                     style={{
                       borderWidth: 15,
-                      borderColor: "#123dff",
+                      borderColor: "black",
                       borderRadius: 40,
                       backgroundColor: "white",
                       marginTop: 10
@@ -127,7 +127,7 @@ class Login extends Component {
                     rounded
                     style={{
                       borderWidth: 15,
-                      borderColor: "#123dff",
+                      borderColor: "black",
                       borderRadius: 40,
                       backgroundColor: "white",
                       marginTop: 10
@@ -150,8 +150,12 @@ class Login extends Component {
                 </Form>
               </Body>
             </ListItem>
+
             <GradientButton
               radius={40}
+              gradientDirection="horizontal"
+              gradientBegin="#FFC919"
+              gradientEnd="#EF8A08"
               style={{
                 width: 380,
                 marginTop: 10,
@@ -185,7 +189,7 @@ class Login extends Component {
             >
               <Text
                 style={{
-                  color: "white",
+                  color: "black",
                   fontFamily: "Avenir",
                   fontSize: 22,
                   fontWeight: "200"

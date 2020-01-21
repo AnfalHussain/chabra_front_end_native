@@ -5,6 +5,9 @@ import * as actionCreators from "../../redux/actions/";
 import { View } from "react-native";
 import { Button, Text } from "native-base";
 
+// Style
+import styles from "./styles";
+
 class FilterItems extends Component {
   state = {
     query: "",
@@ -16,13 +19,13 @@ class FilterItems extends Component {
   };
 
   filterByFruits = () => {
+    this.props.clearFilter();
     this.props.filterProductsByCategory("Fruit");
-    // this.props.filterProducts(query);
   };
 
   filterByVegetables = () => {
+    this.props.clearFilter();
     this.props.filterProductsByCategory("Vegetable");
-    // this.props.filterProducts(query);
   };
 
   render() {
@@ -36,23 +39,20 @@ class FilterItems extends Component {
             alignItems: "center"
           }}
         >
-          <Button onPress={this.clearFilter}>
+          <Button onPress={this.clearFilter} style={styles.button}>
             <Text>All</Text>
           </Button>
-          <Button onPress={this.filterByFruits}>
+          <Button onPress={this.filterByFruits} style={styles.button}>
             <Text>Fruits</Text>
           </Button>
 
-          <Button onPress={this.filterByVegetables}>
+          <Button onPress={this.filterByVegetables} style={styles.button}>
             <Text>Vegetables</Text>
           </Button>
-          {/* buttons */}
         </View>
       </>
     );
   }
-
-  //buton category
 }
 const mapStateToProps = state => {
   return {
@@ -68,7 +68,5 @@ const mapDispatchToProps = dispatch => {
     clearFilter: () => dispatch(actionCreators.clearFilterProductsByCategory())
   };
 };
-
-// export default FilterItems;
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterItems);

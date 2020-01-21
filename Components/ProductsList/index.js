@@ -50,14 +50,23 @@ class ProductsList extends Component {
           style={{ width: "100%", height: "100%" }}
         >
           <SearchBar />
-          <FilterItems />
+          <View
+            style={{
+              marginTop: 30,
+              alignItems: "center"
+            }}
+          >
+            <FilterItems />
+          </View>
+
           <Content style={{ marginTop: 10 }}>
             <View
               style={{
                 flexDirection: "row",
                 flexWrap: "wrap",
                 alignContent: "flex-start",
-                alignItems: "center"
+                alignItems: "center",
+                marginLeft: 3
               }}
             >
               {market}
