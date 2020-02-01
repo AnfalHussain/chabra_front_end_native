@@ -79,7 +79,7 @@ class EditProfile extends Component {
       ),
 
       headerStyle: {
-        backgroundColor: "#3dffcb",
+        backgroundColor: "#F4F7F2",
         fontWeight: "bold"
       }
     };
@@ -175,18 +175,6 @@ class EditProfile extends Component {
               onOpen={this.openDrawer}
               captureGestures="open"
             >
-              <CardItem style={{ backgroundColor: "transparent" }}>
-                <View style={styles.center}>
-                  {/* add image picker to update user profile image */}
-                  {/* if image is undefind display image placeholder */}
-                  <Image
-                    style={styles.image}
-                    bordered
-                    source={{ uri: `http://134.209.242.76/${profile.image}` }}
-                  ></Image>
-                </View>
-              </CardItem>
-
               <Content>
                 <Card style={styles.container}>
                   <CardItem
@@ -216,21 +204,14 @@ class EditProfile extends Component {
                         rounded
                         style={{
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
                         }}
                       >
                         <Input
-                          style={{
-                            color: "black",
-                            margin: 10,
-                            fontSize: 18,
-                            fontFamily: "Futura",
-                            backgroundColor: "transparent",
-                            height: 20
-                          }}
+                          style={styles.inputStyle}
                           autoCorrect={false}
                           autoCapitalize="none"
                           placeholder={profile.user.first_name}
@@ -241,7 +222,6 @@ class EditProfile extends Component {
                         />
                       </Item>
 
-                      <View style={styles.hairLine} />
                       <Text style={styles.titleOfDetail}>
                         Last Name: <Text> {profile.user.last_name}</Text>
                       </Text>
@@ -249,21 +229,14 @@ class EditProfile extends Component {
                         rounded
                         style={{
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
                         }}
                       >
                         <Input
-                          style={{
-                            color: "black",
-                            margin: 10,
-                            fontSize: 18,
-                            fontFamily: "Futura",
-                            backgroundColor: "transparent",
-                            height: 20
-                          }}
+                          style={styles.inputStyle}
                           autoCorrect={false}
                           autoCapitalize="none"
                           placeholder={profile.user.last_name}
@@ -274,8 +247,6 @@ class EditProfile extends Component {
                         />
                       </Item>
 
-                      <View style={styles.hairLine} />
-
                       <Text style={styles.titleOfDetail}>
                         Age: {profile.age}
                       </Text>
@@ -283,21 +254,14 @@ class EditProfile extends Component {
                         rounded
                         style={{
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
                         }}
                       >
                         <Input
-                          style={{
-                            color: "black",
-                            margin: 10,
-                            fontSize: 18,
-                            fontFamily: "Futura",
-                            backgroundColor: "transparent",
-                            height: 20
-                          }}
+                          style={styles.inputStyle}
                           autoCorrect={false}
                           autoCapitalize="none"
                           placeholder={profile.age}
@@ -306,8 +270,6 @@ class EditProfile extends Component {
                         />
                       </Item>
 
-                      <View style={styles.hairLine} />
-
                       <Text style={styles.titleOfDetail}>
                         Email: {profile.user.email}
                       </Text>
@@ -315,21 +277,14 @@ class EditProfile extends Component {
                         rounded
                         style={{
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
                         }}
                       >
                         <Input
-                          style={{
-                            color: "black",
-                            margin: 10,
-                            fontSize: 18,
-                            fontFamily: "Futura",
-                            backgroundColor: "transparent",
-                            height: 20
-                          }}
+                          style={styles.inputStyle}
                           autoCorrect={false}
                           autoCapitalize="none"
                           placeholder={profile.user.email}
@@ -338,8 +293,6 @@ class EditProfile extends Component {
                         />
                       </Item>
 
-                      <View style={styles.hairLine} />
-
                       <Text style={styles.titleOfDetail}>
                         Phone Number: {profile.phone}
                       </Text>
@@ -347,21 +300,14 @@ class EditProfile extends Component {
                         rounded
                         style={{
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
                         }}
                       >
                         <Input
-                          style={{
-                            color: "black",
-                            margin: 10,
-                            fontSize: 18,
-                            fontFamily: "Futura",
-                            backgroundColor: "transparent",
-                            height: 20
-                          }}
+                          style={styles.inputStyle}
                           autoCorrect={false}
                           autoCapitalize="none"
                           placeholder={profile.phone}
@@ -369,8 +315,6 @@ class EditProfile extends Component {
                           value={this.state.phone}
                         />
                       </Item>
-
-                      <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
                         Gender: {this.genderString(profile.gender)}
@@ -381,7 +325,7 @@ class EditProfile extends Component {
                           width: 320,
                           height: 45,
                           borderWidth: 15,
-                          borderColor: "#123dff",
+                          borderColor: "black",
                           borderRadius: 40,
                           backgroundColor: "white",
                           marginTop: 10
@@ -419,12 +363,14 @@ class EditProfile extends Component {
                           />
                         </View>
                       </Item>
-                      <View style={styles.hairLine} />
                     </Body>
                   </CardItem>
 
                   <GradientButton
                     radius={40}
+                    gradientDirection="horizontal"
+                    gradientBegin="#F4F7F2"
+                    gradientEnd="#CCCC"
                     style={{
                       width: 280,
                       margin: 20,
@@ -437,9 +383,10 @@ class EditProfile extends Component {
                   >
                     <Text
                       style={{
-                        color: "white",
+                        color: "rgba(0, 0, 0, 1)",
+                        fontSize: 20,
                         fontFamily: "Futura",
-                        fontSize: 22
+                        fontWeight: "100"
                       }}
                     >
                       Update Profile

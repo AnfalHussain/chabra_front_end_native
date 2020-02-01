@@ -18,7 +18,7 @@ import {
 import { ImageBackground, View, Image } from "react-native";
 
 //Components
-import wallpaper from "../../assets/gray.png";
+import wallpaper from "../../assets/wall.png";
 import SideBar from "../../Navigation/SideBar";
 import profileHeader from "../../assets/profileHeader3.jpg";
 
@@ -57,7 +57,7 @@ class Profile extends Component {
       ),
 
       headerStyle: {
-        backgroundColor: "#3dffcb",
+        backgroundColor: "#F4F7F2",
         fontWeight: "bold"
       }
     };
@@ -128,16 +128,6 @@ class Profile extends Component {
               onOpen={this.openDrawer}
               captureGestures="open"
             >
-              <CardItem style={{ backgroundColor: "transparent" }}>
-                <View style={styles.center}>
-                  <Image
-                    style={styles.image}
-                    bordered
-                    source={{ uri: `http://134.209.242.76/${profile.image}` }}
-                  ></Image>
-                </View>
-              </CardItem>
-
               <Content>
                 <Card style={styles.container}>
                   <CardItem
@@ -145,37 +135,56 @@ class Profile extends Component {
                   >
                     <Body>
                       <Text style={styles.titleOfDetail}>
-                        Username: <Text> {profile.user.username}</Text>
+                        Username:{" "}
+                        <Text style={styles.infoText}>
+                          {" "}
+                          {profile.user.username}
+                        </Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        First Name: <Text> {profile.user.first_name}</Text>
+                        First Name:{" "}
+                        <Text style={styles.infoText}>
+                          {" "}
+                          {profile.user.first_name}
+                        </Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        Last Name: <Text> {profile.user.last_name}</Text>
+                        Last Name:{" "}
+                        <Text style={styles.infoText}>
+                          {" "}
+                          {profile.user.last_name}
+                        </Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        Age: {profile.age}
+                        Age: <Text style={styles.infoText}>{profile.age}</Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        Email: {profile.user.email}
+                        Email:
+                        <Text style={styles.infoText}>
+                          {profile.user.email}
+                        </Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        Phone Number: {profile.phone}
+                        Phone Number:
+                        <Text style={styles.infoText}>{profile.phone}</Text>
                       </Text>
                       <View style={styles.hairLine} />
 
                       <Text style={styles.titleOfDetail}>
-                        Gender: {this.genderString(profile.gender)}
+                        Gender:
+                        <Text style={styles.infoText}>
+                          {this.genderString(profile.gender)}
+                        </Text>
                       </Text>
                     </Body>
                   </CardItem>
