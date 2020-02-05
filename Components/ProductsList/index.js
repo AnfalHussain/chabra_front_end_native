@@ -4,9 +4,17 @@ import * as actionCreators from "../../redux/actions";
 
 // NativeBase Components
 
-import { List, Content, Spinner, Text, Item, Button, Icon } from "native-base";
+import {
+  List,
+  Content,
+  Spinner,
+  Drawer,
+  Text,
+  Item,
+  Button,
+  Icon
+} from "native-base";
 import { ImageBackground, View } from "react-native";
-import { Col, Row, Grid } from "react-native-easy-grid";
 
 //Components
 import ProductCard from "./ProductCard";
@@ -14,23 +22,68 @@ import BasketBtn from "../BasketBtn";
 import SearchBar from "../SearchBar";
 import FilterItems from "../FilterItems";
 import Logo from "./ChabraLogo.js";
+import SideBar from "../../Navigation/SideBar";
 
+//Images
 import wallpaper from "../../assets/wall.png";
 
 // Style
 import styles from "./styles";
 
 class ProductsList extends Component {
-  static navigationOptions = {
-    headerTitle: <Logo />,
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: <Logo />,
 
-    headerRight: <BasketBtn />,
+      headerRight: <BasketBtn />,
+      headerLeft: (
+        <Button
+          style={styles.menu}
+          transparent
+          onPress={() => navigation.getParam("handleDrawer")()}
+        >
+          {navigation.getParam("isOpen") ? (
+            <Icon
+              name="close"
+              type="AntDesign"
+              style={(styles.icon, styles.menu)}
+            />
+          ) : (
+            <Icon
+              name="menu"
+              type="Feather"
+              style={(styles.icon, styles.menu)}
+            />
+          )}
+        </Button>
+      ),
 
-    headerStyle: {
-      backgroundColor: "#F4F7F2",
-      fontWeight: "bold"
-    }
+      headerStyle: {
+        backgroundColor: "#F4F7F2",
+        fontWeight: "bold"
+      }
+    };
   };
+  state = {
+    drawerIsOpen: false
+  };
+
+  handleDrawer = async () => {
+    if (this.state.drawerIsOpen) {
+      this.drawer._root.close();
+    } else {
+      this.drawer._root.open();
+    }
+    await this.setState({ drawerIsOpen: !this.state.drawerIsOpen });
+    this.props.navigation.setParams({ isOpen: this.state.drawerIsOpen });
+  };
+
+  componentDidMount() {
+    this.props.navigation.setParams({
+      handleDrawer: this.handleDrawer,
+      isOpen: this.state.drawerIsOpen
+    });
+  }
 
   render() {
     const products = this.props.products;
@@ -49,29 +102,42 @@ class ProductsList extends Component {
           source={wallpaper}
           style={{ width: "100%", height: "100%" }}
         >
-          <SearchBar />
-          <View
-            style={{
-              marginTop: 30,
-              alignItems: "center"
+          <Drawer
+            ref={ref => {
+              this.drawer = ref;
             }}
+            content={<SideBar navigator={this.navigator} />}
+            onClose={() => this.closeDrawer()}
+            panOpenMask={0.6}
+            openDrawerOffset={0.4}
+            onClose={this.closeDrawer}
+            onOpen={this.openDrawer}
+            captureGestures="open"
           >
-            <FilterItems />
-          </View>
-
-          <Content style={{ marginTop: 10 }}>
+            <SearchBar />
             <View
               style={{
-                flexDirection: "row",
-                flexWrap: "wrap",
-                alignContent: "flex-start",
-                alignItems: "center",
-                marginLeft: 3
+                marginTop: 30,
+                alignItems: "center"
               }}
             >
-              {market}
+              <FilterItems />
             </View>
-          </Content>
+
+            <Content style={{ marginTop: 10 }}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  alignContent: "flex-start",
+                  alignItems: "center",
+                  marginLeft: 3
+                }}
+              >
+                {market}
+              </View>
+            </Content>
+          </Drawer>
         </ImageBackground>
       </>
     );

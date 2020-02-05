@@ -16,10 +16,28 @@ class SideBar extends Component {
             <Item>
               <Button
                 transparent
+                onPress={() => this.props.navigation.push("ProductsListScreen")}
+              >
+                <Icon type="Entypo" name="shop" style={styles.icon2} />
+                <Text style={styles.menuBtn}> Home </Text>
+              </Button>
+            </Item>
+            <Item>
+              <Button
+                transparent
                 onPress={() => this.props.navigation.push("OrderListScreen")}
               >
                 <Icon name="back" type="Entypo" style={styles.icon2} />
                 <Text style={styles.menuBtn}> Order History</Text>
+              </Button>
+            </Item>
+            <Item>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.push("ProfileScreen")}
+              >
+                <Icon type="FontAwesome" name="user" style={styles.icon2} />
+                <Text style={styles.menuBtn}>Profile</Text>
               </Button>
             </Item>
 

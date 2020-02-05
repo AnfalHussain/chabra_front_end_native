@@ -7,21 +7,45 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 10,
-    borderRadius: 30
+    borderRadius: 15
+  },
+  left: {
+    width: "90%"
+  },
+  right: {
+    width: "10%"
   },
   text: {
-    color: "rgba(0, 0, 0, 0.85)",
+    color: "#EF8A08",
+    fontFamily: "Futura",
     fontSize: 22,
-    fontWeight: "bold",
-    marginBottom: 30,
+    fontWeight: "400",
+    paddingHorizontal: 50,
+    // paddingLeft: 10,
+    paddingBottom: 10,
     opacity: 1
+  },
+  menu: {
+    color: "black",
+    tintColor: "black"
+  },
+
+  icon: {
+    color: "rgba(0, 0, 0, 0.7)",
+    fontSize: 20
+  },
+  viewIcon: {
+    marginVertical: 30,
+    color: "rgba(0, 0, 0, 0.6)",
+    fontSize: 18
   },
 
   text1: {
+    fontFamily: "Futura",
     color: "rgba(0, 0, 0, 0.7)",
-    fontSize: 18,
+    fontSize: 16,
     fontStyle: "italic",
-    fontWeight: "500"
+    fontWeight: "300"
   },
 
   viewMessage: {
@@ -46,17 +70,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-    backgroundColor: "rgba(255, 255, 255, 0.52)",
+    backgroundColor: "rgba(255, 255, 255, 0.7)",
     height: "100%",
     width: "100%",
     borderRadius: 5
   },
   cardView: {
-    marginTop: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    marginTop: 2,
+    marginLeft: 20
     // marginBottom: 10,
-    borderRadius: 5
   },
   cardDesign: {
     borderRadius: 50
@@ -68,7 +90,6 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    height: 100,
     flexDirection: "row"
   },
   transparent: {

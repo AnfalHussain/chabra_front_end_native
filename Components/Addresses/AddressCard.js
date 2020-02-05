@@ -26,7 +26,7 @@ class AddressCard extends Component {
     return (
       <>
         <Collapse>
-          <CollapseHeader>
+          {/* <CollapseHeader>
             <View>
               <Text>where are you</Text>
 
@@ -34,8 +34,14 @@ class AddressCard extends Component {
             </View>
           </CollapseHeader>
           <CollapseBody>
-            <Text>Ta daa!</Text>
-          </CollapseBody>
+            <View>
+              <Text style={{ color: "#EF8A08" }}>Ta daa!</Text>
+            </View>
+          </CollapseBody> */}
+
+
+
+          
         </Collapse>
       </>
     );

@@ -93,17 +93,17 @@ class Address extends Component {
                   <Collapse>
                     <CollapseHeader>
                       <View>
-                        <Text>where are you</Text>
+                        <Text>THE HEADER</Text>
 
                         {/* <Text>{this.props.addressTitle}</Text> */}
                       </View>
                     </CollapseHeader>
                     <CollapseBody>
-                      <Text>Ta daa!</Text>
+                      <Text>INSIDE THE HEADER</Text>
                     </CollapseBody>
                   </Collapse>
                 </>
-                {/* <View>{addresses}</View> */}
+                <View>{addresses}</View>
               </Content>
             </Drawer>
           </ImageBackground>

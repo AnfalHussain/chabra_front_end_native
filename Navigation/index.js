@@ -1,5 +1,5 @@
 import { createAppContainer } from "react-navigation";
-import BottomTabNav from "./BottomTabNav";
+import StackNav from "./StackNav.js";
 
-const AppContainer = createAppContainer(BottomTabNav);
+const AppContainer = createAppContainer(StackNav);
 export default AppContainer;

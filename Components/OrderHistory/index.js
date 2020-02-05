@@ -64,7 +64,7 @@ class OrderHistory extends Component {
       ),
 
       headerStyle: {
-        backgroundColor: "#3dffcb",
+        backgroundColor: "#F4F7F2",
         fontWeight: "bold"
       }
     };

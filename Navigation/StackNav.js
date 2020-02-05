@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Icon } from "native-base";
+
 import ProductsList from "../Components/ProductsList";
 import ProductDetail from "../Components/ProductDetail";
 import ShoppingBasket from "../Components/ShoppingBasket";
@@ -7,10 +8,15 @@ import OrderSum from "../Components/SummaryOrder";
 import OrderList from "../Components/OrderHistory";
 import ThankYou from "../Components/ThankYou";
 import OrderDetails from "../Components/OrderDetails";
+import Profile from "../Components/Profile";
+import EditProfile from "../Components/EditProfile";
+import Login from "../Components/Login";
+import Signup from "../Components/Signup";
 
+import Adresses from "../Components/Addresses/Address";
 import { createStackNavigator } from "react-navigation-stack";
 
-const ProductsTab = createStackNavigator(
+const StackNav = createStackNavigator(
   {
     ProductsListScreen: ProductsList,
     ProductDetailScreen: ProductDetail,
@@ -18,7 +24,12 @@ const ProductsTab = createStackNavigator(
     SummaryScreen: OrderSum,
     OrderListScreen: OrderList,
     OrderDetailScreen: OrderDetails,
-    ThankYouScreen: ThankYou
+    ThankYouScreen: ThankYou,
+    ProfileScreen: Profile,
+    LoginScreen: Login,
+    SignupScreen: Signup,
+    EditProfileScreen: EditProfile,
+    AdressesScreen: Adresses
   },
 
   {
@@ -45,4 +56,4 @@ const ProductsTab = createStackNavigator(
   }
 );
 
-export default ProductsTab;
+export default StackNav;

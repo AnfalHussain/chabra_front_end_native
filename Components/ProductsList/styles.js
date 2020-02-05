@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     borderRadius: 30
   },
 
+  menu: {
+    color: "black",
+    tintColor: "black"
+  },
+
   center: {
     justifyContent: "center",
     alignItems: "center"
