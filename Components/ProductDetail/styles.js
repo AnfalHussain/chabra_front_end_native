@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   addToCartBtn: {
-    backgroundColor: "#1654E7",
+    backgroundColor: "#535859",
     textAlign: "center",
     alignSelf: "center",
     borderRadius: 100,

@@ -109,7 +109,7 @@ class ProductDetail extends Component {
             <CardItem style={styles.myCard}>
               <Button
                 style={{
-                  backgroundColor: "#1654E7",
+                  backgroundColor: "#535859",
                   borderRadius: 50
                 }}
                 onPress={() =>
@@ -132,9 +132,10 @@ class ProductDetail extends Component {
                 {/* <Input
                     type="text" value={this.state.quantity} /> */}
               </Item>
+
               <Button
                 style={{
-                  backgroundColor: "#1654E7",
+                  backgroundColor: "#535859",
                   borderRadius: 60
                 }}
                 onPress={() => this.changeQuantity(1)}
@@ -156,13 +157,13 @@ class ProductDetail extends Component {
               </Text>
             </View>
 
-            <Button style={styles.addToCartBtn} onPress={this.handleAddItem}>
+            <Button
+              style={styles.addToCartBtn}
+              onPress={this.state.quantity && this.handleAddItem}
+            >
               <Text style={styles.basketBtn}>
                 Add to Basket{" "}
                 <Icon
-                  onPress={() =>
-                    this.props.navigation.navigate("ShoppingBasketScreen")
-                  }
                   name="shopping-basket"
                   type="FontAwesome"
                   style={styles.icon}
